@@ -5,7 +5,6 @@ setInterval(function(){
     healthvariable.value = yourHealth;   
 }, 1);
 
-
 function addHP(){
     yourHealth += 10;
 }
