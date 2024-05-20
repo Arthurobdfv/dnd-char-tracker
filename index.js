@@ -1,15 +1,14 @@
+/* HP config*/
+let yourHealth = 100;
+setInterval(function(){
+    let healthvariable = document.getElementById("health");
+    healthvariable.value = yourHealth;   
+}, 1);
 
-var longRestBtn = document.getElementsByClassName('long-rest-event-button')[0];
-var count = 0;
-var actionSurgeComponent = document.getElementsByClassName("action-surge-counter-display");
+function addHP(){
+    yourHealth += 10;
+}
 
-longRestBtn.addEventListener("click",(e) => {
-  count += 1;
-  console.log("Clicou em ShortRest");
-  updateComponent();
-})
-
-
-function updateComponent(){
-  actionSurgeComponent.innerHTML = count + "/1";
+function loseHp(){
+  yourHealth -= 1;
 }

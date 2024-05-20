@@ -4,8 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>Dnd Sheet Tracker</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="./index.js"> </script>
 </head>
 
   <div classname="events-button">
@@ -17,8 +18,13 @@
 <div classname="action-surge-counter-display"></div>
 </div>
 <body>
-  Hello world
-  <script src="script.js"></script>
+
+  <div classname="hp-tracker">
+    <progress classname="healthTracker" id="health" min="0" max="100" value="100"></progress>
+      <button onclick="gainHp()">Add Hp</button>
+    <button onclick="loseHp()">Lose HP</button>
+
+  </div>
 </body>
 
 </html>
