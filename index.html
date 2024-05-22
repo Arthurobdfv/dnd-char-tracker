@@ -4,9 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="./components/hp-tracker/hpTracker.css">
   <title>Dnd Sheet Tracker</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
+  
+  <!--Inspiration pts checkbox-->
+<div class="insp-container"> 
+ <div class="insp-checkbox">
+   <input type="checkbox" id="insp-checkbox"class="insp-checkbox-control"> Inspiration
+ </div>
+</div>
 
 <div id="events-button">
   <button id="short-rest-event-button">Short Rest</button>
@@ -19,12 +26,30 @@
   <script src="./components/action-surge/actionSurge.js"></script>
   </div>
 <body>
-
-  <div classname="hp-tracker">
-    <progress classname="healthTracker" id="health" min="0" max="100" value="100"></progress>
-      <button onclick="gainHp()">Add Hp</button>
+  
+<!--Health Bar-->
+  <div class="hp-tracker">
+    <progress class="healthTracker" id="health" min="0" max="100" value="100"></progress>
+   <button onclick="addHp()">Add Hp</button>
     <button onclick="loseHp()">Lose HP</button>
+    <link href="./components/hp-tracker/hpTracker.js" rel="stylesheet" type="text/css" />
   </div>
+
+  <!--money tracker-->
+  <div class="money-tracker">
+    <div class="money-tracker-text">Money Tracker </div>
+    <div class="money-counter-display"></div>
+    <div class="money-counter-display-text">Gold Pieces</div>
+    <input type= "number" id="money-counter-input" class="money-counter-input" value="0">
+    <div class="money-counter-display-text">Silver Pieces</div>
+    <input type= "number" id="money-counter-input" class="money-counter-input" value="0">
+    <div class="money-counter-display-text">Copper Pieces</div>
+    <input type= "number" id="money-counter-input" class="money-counter-input" value="0">
+    <div class="money-counter-display-text"> Electrum Pieces</div>
+    <input type= "number" id="money-counter-input" class="money-counter-input" value="0">
+    <div clas="money-counter-display-text"> Platinum Pieces</div>
+    <input type= "number" id="money-counter-input" class="money-counter-input" value="0">
+    
 </body>
 
 </html>
