@@ -38,6 +38,10 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ steps.deployment.outputs.page_url }}
+        run: echo "$GITHUB_CONTEXT"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
