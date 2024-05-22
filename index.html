@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width">
   <title>Dnd Sheet Tracker</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="./script.js"> </script>
 </head>
   
   <!--Inspiration pts checkbox-->
@@ -16,12 +15,17 @@
  </div>
 </div>
 
-  <!--Short/Long Rest checkbox-->
-  <div classname="events-button">
-    <button class="short-rest-event-button">Short Rest</button>
-    <button class="long-rest-event-button">Long Rest</button> 
+
+<div id="events-button">
+  <button id="short-rest-event-button">Short Rest</button>
+  <button id="long-rest-event-button">Long Rest</button> 
+  <script src="mainComponents.js"></script>
+</div>
+<div id="action-surge-tracker">
+    <div id="action-surge-tracker-text">ActionSurge Tracker</div>
+    <div id="action-surge-counter-display"></div>
+  <script src="./components/action-surge/actionSurge.js"></script>
   </div>
-<div classname="spell-slot-tracker"><div classname="spell-slot-tracker-text">Spell Slots Tracker</div></div>"</div>
 <body>
   
 <!--Health Bar-->
@@ -29,7 +33,6 @@
     <progress class="healthTracker" id="health" min="0" max="100" value="100"></progress>
    <button onclick="addHp()">Add Hp</button>
     <button onclick="loseHp()">Lose HP</button>
-
   </div>
 
   <!--money tracker-->
