@@ -5,11 +5,17 @@ setInterval(function(){
     healthvariable.value = yourHealth;   
 }, 1);
 
-
-function addHP(){
-    yourHealth += 10;
+function loseHp() {
+    yourHealth -= 10;
+    console.log("Health after reduction: " + yourHealth);
+  if (yourHealth<=40) {
+    document.getElementById("health").style.backgroundColor = "red";
+  }
+    
 }
 
-function loseHp(){
-  yourHealth -= 1;
+function addHp(){
+yourHealth += 10;
+  console.log("Health after addition: " + yourHealth);
+  
 }
