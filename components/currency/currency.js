@@ -1,28 +1,56 @@
-let copperPc = 0;
-let silverPc = 0;
-let goldPc = 0;
-let platinumPc = 0;
+var totalCp = 3259; //We will get this from the user
 
-function addCurrency(gold, silver, copperAmount, electrum, platinum) {
+function refreshUI(){
+  var cpTotalClone = totalCp // We do this not to alter totalCP, so its just a copy
+  var platinumValue = Math.floor(cpTotalClone/1000);
+  cpTotalClone = cpTotalClone - platinumValue*1000;
+  var goldValue = Math.floor(cpTotalClone/100);
+  cpTotalClone = cpTotalClone - goldValue*100;
+  var eleValue = Math.floor(cpTotalClone/50);
+  cpTotalClone = cpTotalClone - eleValue*50;
+  var silverValue = Math.floor(cpTotalClone*10);
+  cpTotalClone = cpTotalClone - silverValue;
+  var copperValue = cpTotalClone;
 
-    //covert gold to copper
-goldPc += gold * 100;
-    //convert silver to copper
-silverPc += silver * 10;
-    //convert electrum to copper
-electrumPc += electrum * 50;
-    //convert platinum to copper
-platinumPc +=  platinum * 1000;
-copper += copperAmount;
-
- //Ill be doing mathfloor to "humanise values"
-silverPc += Math.floor(copper/10);
-    copper %= 10;
-goldPc += Math.floor(silverPc/100);
-electrumPc += Math.floor(eletrumPc/50);
-    eletrumPc %= 50;
-platinumPc += Math.floor(platinumPc/1000);
-    platinumpc %= 1000;
-
-updateDisplay();
+  /* Here you add all the logic to update the
+  text / label fields with the corresponding values*/
+  document.getElementById('money-counter-input-gold').innerHTML = goldValue;
+  document.getElementById('money-counter-input-platinum').innerHTML = platinumValue;
+  document.getElementById('money-counter-input-electrum').innerHTML = eleValue;
+  document.getElementById('money-counter-input-silver').innerHTML = silverValue;
+  document.getElementById('money-counter-input-copper').innerHTML = copperValue;
+  
 }
+
+function addValueToCurrency(value) {
+  totalCp = totalCp + value;
+  refreshUI();
+}
+
+
+// Adding gold
+function addGold() {
+ 
+  addValueToCurrency(100);
+}
+
+// adding EP
+function addEP() {
+ 
+  addValueToCurrency(50);
+}
+
+// func to remove platinum
+function removePlatinum() {
+  
+  addValueToCurrency(-1000);
+}
+//func to remove gold
+function removeGold() {
+    addValueToCurrency(-100);
+  }
+//func to remove silver
+  function removeSilver() {
+    addValueToCurrency(-10);
+  }
+
