@@ -12,7 +12,7 @@ silverPc += silver * 10;
     //convert electrum to copper
 electrumPc += electrum * 50;
     //convert platinum to copper
-platinumPc += * platinum * 1000;
+platinumPc +=  platinum * 1000;
 copper += copperAmount;
 
  //Ill be doing mathfloor to "humanise values"
