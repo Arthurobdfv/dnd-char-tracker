@@ -1,0 +1,37 @@
+.money-counter-display {
+    display: flex;
+    margin: 10px;
+}
+
+.money-counter-currency-display > * {
+    width: 50%;
+}
+.money-counter-currency-display {
+    display: flex;
+    flex-flow: row wrap; 
+    text-align: center;
+    justify-content: center;
+}
+
+.money-counter-currency-display > .currency-display-image-container {
+    line-height: 2rem;
+    text-align: center;
+}
+
+.money-counter-currency-display > .currency-display-image-container > img {
+    vertical-align: middle;
+    width: 1rem;
+}
+
+.money-counter-currency-display > .currency-change-buttons {
+    display: flex;
+    width: 100%;
+}
+
+.money-counter-currency-display > .currency-change-buttons > button {
+    flex: 1;
+    margin: 5px;
+}
+
+
+
