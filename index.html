@@ -8,7 +8,41 @@
   <title>Dnd Sheet Tracker</title>
   <link rel="icon" type="image/x-icon" href="./components/assets/favicon.png">
 </head>
-  
+
+<body>
+                          <!--jQUERY-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function includeHTML() {
+          var z, i, elmnt, file, xhttp;
+          /* Loop through a collection of all HTML elements: */
+          z = document.getElementsByTagName("*");
+          for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+              /* Make an HTTP request using the attribute value as the file name: */
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                  /* Remove the attribute, and call this function once more: */
+                  elmnt.removeAttribute("w3-include-html");
+                  includeHTML();
+                }
+              }
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              /* Exit the function: */
+              return;
+            }
+          }
+        }
+        </script>
+
+
   <!--Inspiration pts checkbox-->
 <div class="insp-container"> 
  <div class="insp-checkbox">
@@ -26,7 +60,6 @@
     <div id="action-surge-counter-display"></div>
   <script src="./components/action-surge/actionSurge.js"></script>
   </div>
-<body>
   
 <!--Health Bar-->
   <div class="hp-tracker">
@@ -68,10 +101,8 @@
           <img src="./components/assets/platinum-coin.jpeg" alt="platinum coin" height="50px">
           <input type= "number" id="money-counter-input-platinum" class="money-counter-input" value="0">
           <button onclick="addCurrency()"> Add Platinum</button>
-          <button onclick="removeCurrency()"> Remove Platinum</button>
-        
-        
-    <script src="./components/currency/currency.js"></script>
+          <button onclick="removeCurrency()"> Remove Platinum</button>  
+           <script src="./components/currency/currency.js"></script>
     </div>
     
 </body>
